@@ -1,4 +1,4 @@
-# TODO: Create steerable turtle. W is forwards, S is backwards, A is counter-clockwise rotation, D
+# Create steerable turtle. W is forwards, S is backwards, A is counter-clockwise rotation, D
 # is clockwise rotation. Basically an Etch-A-Sketch.
 
 from turtle import Turtle, Screen
