@@ -36,7 +36,7 @@ class Snake:
     def hide(self):
         for segment in self.segments:
             segment.hideturtle()
-    
+
     def up(self):
         self.head.setheading(90)
 
@@ -48,7 +48,7 @@ class Snake:
 
     def right(self):
         self.head.setheading(0)
-        
+
     def get_segment_positions(self):
         segment_positions = []
         for segment in self.segments:

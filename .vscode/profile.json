@@ -1,0 +1,284 @@
+{
+  "name": "Global",
+  "userSettings": {
+    "[jsonc]": {
+      "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "[markdown]": {
+      "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+    "window.title": "Global — ${activeEditorShort}${separator}${rootName}",
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "One Dark Pro Mix",
+    "workbench.productIconTheme": "material-product-icons",
+    "betterAlign.indentBase": "dontchange",
+    "betterAlign.surroundSpace": {
+      "arrow": [
+        1,
+        1
+      ],
+      "assignment": [
+        1,
+        1
+      ],
+      "colon": [
+        0,
+        1
+      ],
+      "comment": 2
+    },
+    "blockman.n04ColorComboPreset": "Oxygen Dark (Gradients)",
+    "blockman.n04Sub02ColorComboPresetForLightTheme": "none",
+    "blockman.n04Sub05MinDistanceBetweenRightSideEdges": 6,
+    "blockman.n04Sub06AdditionalPaddingRight": 1,
+    "blockman.n21BorderRadius": 0,
+    "blockman.n28TimeToWaitBeforeRerenderAfterLastChangeEvent": 1,
+    "blockman.n33A03B1FromDepth0ToInwardForFocusTreeBorders": "30,1,0,2; neutral > linear-gradient(to right, rgb(144, 54, 8), rgb(48, 36, 116))",
+    "color-highlight.matchWords": true,
+    "diffEditor.wordWrap": "off",
+    "editor.autoClosingBrackets": "always",
+    "editor.autoClosingQuotes": "always",
+    "editor.codeLensFontFamily": "JetBrains Mono",
+    "editor.find.autoFindInSelection": "always",
+    "editor.fontFamily": "JetBrains Mono",
+    "editor.fontLigatures": true,
+    "editor.guides.bracketPairs": false,
+    "editor.guides.indentation": false,
+    "editor.indentSize": "tabSize",
+    "editor.inlayHints.enabled": "off",
+    "editor.inlineSuggest.enabled": true,
+    "editor.minimap.autohide": true,
+    "editor.minimap.maxColumn": 100,
+    "editor.minimap.showSlider": "always",
+    "editor.minimap.size": "fit",
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.quickSuggestions": {
+      "comments": "inline",
+      "strings": "inline"
+    },
+    "editor.renderLineHighlight": "all",
+    "editor.renderWhitespace": "boundary",
+    "editor.rulers": [
+      100
+    ],
+    "editor.stickyScroll.enabled": true,
+    "editor.suggest.localityBonus": true,
+    "editor.suggest.preview": true,
+    "editor.tabSize": 2,
+    "editor.trimAutoWhitespace": true,
+    "editor.wordWrap": "off",
+    "editor.wordWrapColumn": 100,
+    "errorLens.borderRadius": "2px",
+    "errorLens.delay": 1000,
+    "errorLens.fontFamily": "JetBrains Mono",
+    "errorLens.fontSize": "12",
+    "errorLens.fontWeight": "300",
+    "errorLens.gutterIconsEnabled": true,
+    "errorLens.gutterIconSet": "defaultOutline",
+    "errorLens.margin": "2ch",
+    "errorLens.messageBackgroundMode": "message",
+    "errorLens.messageMaxChars": 250,
+    "errorLens.messageTemplate": "$message Source: $source",
+    "errorLens.padding": "5px",
+    "errorLens.statusBarColorsEnabled": true,
+    "errorLens.statusBarMessageEnabled": true,
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+    "files.associations": {
+      "*.rmd": "markdown"
+    },
+    "files.autoGuessEncoding": true,
+    "files.autoSave": "onWindowChange",
+    "files.maxMemoryForLargeFilesMB": 8192,
+    "git.autofetch": true,
+    "git.confirmSync": false,
+    "github.copilot-labs.advanced": {},
+    "oneDarkPro.bold": false,
+    "oneDarkPro.editorTheme": "One Dark Pro Darker",
+    "oneDarkPro.italic": false,
+    "oneDarkPro.vivid": true,
+    "path-intellisense.autoSlashAfterDirectory": true,
+    "path-intellisense.autoTriggerNextSuggestion": true,
+    "projectManager.git.baseFolders": [
+      "E:\\Coding Projects"
+    ],
+    "projectManager.tags": [
+      "Personal",
+      "Work",
+      "Learning"
+    ],
+    "projectManager.vscode.baseFolders": [
+      "E:\\Coding Projects"
+    ],
+    "rewrap.autoWrap.enabled": true,
+    "rewrap.reformat": true,
+    "rewrap.wrappingColumn": 100,
+    "tabsColor.byFileType": {
+      "css": {
+        "backgroundColor": "#30a9dc",
+        "fontColor": "black"
+      },
+      "html": {
+        "backgroundColor": "#bf5138",
+        "fontColor": "black"
+      },
+      "js": {
+        "backgroundColor": "#f0dc4e",
+        "fontColor": "white"
+      },
+      "py": {
+        "backgroundColor": "#3670a0",
+        "fontColor": "white"
+      },
+      "R": {
+        "backgroundColor": "#bebfc4",
+        "fontColor": "black"
+      }
+    },
+    "terminal.external.windowsExec": "wt",
+    "terminal.integrated.cursorBlinking": true,
+    "terminal.integrated.cursorStyle": "line",
+    "terminal.integrated.defaultProfile.windows": "PowerShell",
+    "terminal.integrated.profiles.windows": {
+      "Command Prompt": {
+        "args": [],
+        "icon": "terminal-cmd",
+        "path": [
+          "${env:windir}\\Sysnative\\cmd.exe",
+          "${env:windir}\\System32\\cmd.exe"
+        ]
+      },
+      "Git Bash": null,
+      "PowerShell": {
+        "args": [],
+        "icon": "terminal-powershell",
+        "path": "C:\\Program Files\\PowerShell\\7\\pwsh.exe"
+      },
+      "Ubuntu-20.04 (WSL)": null,
+      "Windows PowerShell": null
+    },
+    "terminal.integrated.shellIntegration.suggestEnabled": true,
+    "todo-tree.general.tags": [
+      "BUG",
+      "HACK",
+      "FIXME",
+      "TODO",
+      "XXX",
+      "[ ]",
+      "[x]",
+      "BAD",
+      "IDEA"
+    ],
+    "todo-tree.highlights.backgroundColourScheme": [
+      "red",
+      "indigo",
+      "violet",
+      "teal",
+      "blue",
+      "orange",
+      "rgba(41, 193, 116, 1)",
+      "darkred",
+      "cyan",
+      "gold"
+    ],
+    "todo-tree.highlights.foregroundColourScheme": [
+      "white",
+      "black",
+      "black",
+      "black",
+      "white",
+      "white",
+      "black",
+      "white"
+    ],
+    "todo-tree.highlights.useColourScheme": true,
+    "vsintellicode.features.python.deepLearning": "enabled",
+    "vsintellicode.modelDownloadPath": "E:\\intellicode\\models",
+    "workbench.colorCustomizations": {
+      "editor.lineHighlightBackground": "#1073cf2d",
+      "editor.lineHighlightBorder": "#9fced11f",
+      "editorBracketHighlight.foreground1": "#abb2bf",
+      "editorBracketHighlight.foreground2": "#98c379",
+      "editorBracketHighlight.foreground3": "#d19a66",
+      "editorBracketHighlight.foreground4": "#e06c75",
+      "editorBracketHighlight.foreground5": "#56b6c2",
+      "editorBracketHighlight.foreground6": "#c678dd",
+      "editorBracketHighlight.unexpectedBracket.foreground": "#ff0000",
+      "terminal.ansiBlack": "#2E3440",
+      "terminal.ansiBlue": "#EBCB8B",
+      "terminal.ansiBrightBlack": "#4C566A",
+      "terminal.ansiBrightBlue": "#EBCB8B",
+      "terminal.ansiBrightCyan": "#D08770",
+      "terminal.ansiBrightGreen": "#BF616A",
+      "terminal.ansiBrightMagenta": "#A3BE8C",
+      "terminal.ansiBrightRed": "#88C0D0",
+      "terminal.ansiBrightWhite": "#8FBCBB",
+      "terminal.ansiBrightYellow": "#5E81AC",
+      "terminal.ansiCyan": "#D08770",
+      "terminal.ansiGreen": "#BF616A",
+      "terminal.ansiMagenta": "#A3BE8C",
+      "terminal.ansiRed": "#88C0D0",
+      "terminal.ansiWhite": "#E5E9F0",
+      "terminal.ansiYellow": "#5E81AC",
+      "terminal.background": "#2E3440",
+      "terminal.foreground": "#E5E9F0",
+      "terminalCursor.background": "#E5E9F0",
+      "terminalCursor.foreground": "#E5E9F0"
+    },
+    "windowsTerminal.reuseExistingWindow": false,
+    "color-highlight.markRuler": false,
+    "terminal.integrated.enableBell": true,
+    "terminal.integrated.fontSize": 13,
+    "terminal.integrated.splitCwd": "initial",
+    "terminal.integrated.tabs.defaultIcon": "terminal-powershell",
+    "terminal.integrated.useWslProfiles": false,
+    "workbench.commandPalette.experimental.suggestCommands": true,
+    "workbench.settings.useSplitJSON": false,
+    "workbench.startupEditor": "none"
+  },
+  "extensions": [
+    "aaron-bond.better-comments",
+    "alefragnani.project-manager",
+    "azemoh.one-monokai",
+    "bbugh.change-color-format",
+    "blake-mealey.generate-wt-scheme",
+    "Cardinal90.multi-cursor-case-preserve",
+    "chouzz.vscode-better-align",
+    "christian-kohler.path-intellisense",
+    "chrmarti.regex",
+    "darkriszty.markdown-table-prettify",
+    "DavidAnson.vscode-markdownlint",
+    "formulahendry.code-runner",
+    "GitHub.copilot-labs",
+    "GitHub.copilot-nightly",
+    "Gruntfuggly.todo-tree",
+    "jebbs.markdown-extended",
+    "kortina.vscode-markdown-notes",
+    "lacroixdavid1.vscode-format-context-menu",
+    "leodevbro.blockman",
+    "MaoSantaella.night-wolf",
+    "mhutchie.git-graph",
+    "MohammadBaqer.better-folding",
+    "mondersky.tabscolor",
+    "ms-dotnettools.vscode-dotnet-runtime",
+    "naumovs.color-highlight",
+    "PKief.material-icon-theme",
+    "PKief.material-product-icons",
+    "royaction.color-manager",
+    "ryu1kn.partial-diff",
+    "sdras.night-owl",
+    "shd101wyy.markdown-preview-enhanced",
+    "stkb.rewrap",
+    "telesoho.vscode-markdown-paste-image",
+    "thedavej.night-owl-black",
+    "Tyriar.sort-lines",
+    "Tyriar.windows-terminal",
+    "usernamehw.errorlens",
+    "VisualStudioExptTeam.intellicode-api-usage-examples",
+    "VisualStudioExptTeam.vscodeintellicode",
+    "vsls-contrib.gistfs",
+    "yatki.vscode-surround",
+    "yzane.markdown-pdf",
+    "zhuangtongfa.material-theme"
+  ]
+}
