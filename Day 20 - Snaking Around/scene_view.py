@@ -37,5 +37,3 @@ class Scene:
     def game_over(self):
         self.screen.title(f"Snake Eater - Game Over")
         self.screen.exitonclick()
-grammarly
-install bibtexLanguage
