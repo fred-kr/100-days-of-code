@@ -1,6 +1,7 @@
 from turtle import Screen, Turtle
 import random
 
+
 class Scene:
     def __init__(self):
         self.screen = Screen()
@@ -35,5 +36,5 @@ class Scene:
         self.screen.title(f"Snake Eater - Score: {self.score}")
 
     def game_over(self):
-        self.screen.title(f"Snake Eater - Game Over")
+        self.screen.title(f"Snake Eater - Game Over {self.score}")
         self.screen.exitonclick()
