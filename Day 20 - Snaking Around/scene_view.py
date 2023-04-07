@@ -1,24 +1,29 @@
-from turtle import Screen, Turtle
 import random
+from turtle import Turtle, _Screen
 
 
 class Scene:
     def __init__(self):
-        self.screen = Screen()
-        self.food = Turtle(shape="circle")
         self.score = 0
 
-    def screen_setup(self):
+    def screen_setup(self, screen, title):
         """Set up the screen for the game."""
-        self.screen.setup(width=600, height=600)
-        self.screen.bgcolor("black")
-        self.screen.title("Snake Eater")
-        self.screen.exitonclick()
-        return self.screen
+        if isinstance(screen, _Screen):
+            screen.setup(width=600, height=600)
+            screen.bgcolor("black")
+            screen.title(title)
+            screen.listen()
+            new_screen = screen
+            return new_screen
+
+        else:
+            raise TypeError("screen must be a Screen object")
 
     def spawn_food(self, snake_pos):
-        self.food.color("red")
-        self.food.penup()
+        food = Turtle(shape="circle", visible=False)
+        food.speed("fastest")
+        food.color("red")
+        food.penup()
 
         while True:
             x = random.choice(range(-280, 280, 20))
@@ -26,15 +31,18 @@ class Scene:
             if (x, y) not in snake_pos:
                 break
 
-        self.food.goto(x, y)
+        food.goto(x, y)
+        food.showturtle()
+        return food
 
-    def remove_food(self):
-        self.food.hideturtle()
+    def remove_food(self, food):
+        food.hideturtle()
 
-    def update_score(self):
+    def update_score(self, screen):
         self.score += 1
-        self.screen.title(f"Snake Eater - Score: {self.score}")
+        screen.title(f"Snake Eater - Score: {self.score}")
 
-    def game_over(self):
-        self.screen.title(f"Snake Eater - Game Over {self.score}")
-        self.screen.exitonclick()
+    def game_over(self, screen):
+        screen.title(f"Snake Eater - Game Over {self.score}")
+
+        screen.ontimer(screen.bye, 2000)
