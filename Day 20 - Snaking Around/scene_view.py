@@ -43,6 +43,18 @@ class Scene:
         screen.title(f"Snake Eater - Score: {self.score}")
 
     def game_over(self, screen):
-        screen.title(f"Snake Eater - Game Over {self.score}")
+        screen.resetscreen()
+        screen.title("Snake Eater - Game Over")
+        screen.bgcolor("black")
+        scoreboard = Turtle(visible=False)
+        scoreboard.speed("fastest")
+        scoreboard.color("white")
+        scoreboard.penup()
+        scoreboard.goto(0, 0)
+        scoreboard.write(
+            f"Game Over! Your score was {self.score}.",
+            align="center",
+            font=("Courier", 24, "normal"),
+        )
 
-        screen.ontimer(screen.bye, 2000)
+        # screen.ontimer(screen.bye, 2000)
