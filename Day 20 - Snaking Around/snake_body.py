@@ -2,45 +2,38 @@ from turtle import Turtle
 
 
 class Snake:
-    def __init__(self, initial_positions):
-        self.segments = []
+    def __init__(self, initial_positions: list[tuple[int, int]]):
+        self.positions: list[tuple[int, int]] = initial_positions
+        self.segments: list[Turtle] = []
         self.create_snake(initial_positions)
-        self.head = self.segments[0]
-        self.is_alive = True
+        self.head: Turtle = self.segments[0]
+        self.is_alive: bool = True
 
-    def create_snake(self, starting_positions):
+    def create_snake(self, starting_positions: list[tuple[int, int]]) -> None:
         for position in starting_positions:
             new_segment = Turtle(shape="square")
-            new_segment.seth(0)
             new_segment.color("white")
             new_segment.penup()
             new_segment.goto(x=position[0], y=position[1])
-            new_segment.showturtle()
             self.segments.append(new_segment)
 
     def add_segment(self):
-        # new_segment = Turtle(shape="square", visible=False)
-        # new_segment.speed(0)
-        # new_segment.color("white")
-        # new_segment.penup()
-        # new_segment.goto(self.tail.xcor(), self.tail.ycor())
-        # new_segment.showturtle()
         tail = self.segments[-1]
         new_segment = tail.clone()
         self.segments.append(new_segment)
-        # self.segment_positions.append(new_segment.pos())
 
     def move(self):
-        for segment in range(len(self.segments) - 1, 0, -1):
-            new_x = self.segments[segment - 1].xcor()
-            new_y = self.segments[segment - 1].ycor()
-            self.segments[segment].goto(new_x, new_y)
-            # self.segment_positions[segment] = self.segments[segment].pos()
-        self.head.forward(20)
+        # Update the positions list
+        self.positions = [  # type: ignore
+            (self.segments[i - 1].xcor(), self.segments[i - 1].ycor())
+            for i in range(1, len(self.segments))
+        ]
 
-    def hide(self):
-        for segment in self.segments:
-            segment.hideturtle()
+        # Move the segments
+        for i, segment in enumerate(self.segments[1:], start=1):
+            segment.goto(self.positions[i - 1])
+
+        self.head.forward(20)
 
     def up(self):
         self.head.setheading(90)
@@ -55,7 +48,4 @@ class Snake:
         self.head.setheading(0)
 
     def get_segment_positions(self):
-        segment_positions = []
-        for segment in self.segments:
-            segment_positions.append(segment.position())
-        return segment_positions
+        return self.positions

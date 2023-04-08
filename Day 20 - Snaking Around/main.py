@@ -9,29 +9,46 @@
 # [x] 6. Detect collision with wall.
 # [x] 7. Detect collision with tail.
 
-from turtle import Screen, Turtle  # noqa: F401
+import time
+from turtle import Screen, _Screen
 
-from scene_view import Scene
-from snake_body import Snake  # noqa: F401
+from food import Food
+from scoreboard import Scoreboard
+from snake_body import Snake
 
-game = Scene()
+DELAY = 0.1
+STARTER_POSITIONS = [(0, 0), (-20, 0), (-40, 0)]
+
 screen = Screen()
+screen.setup(width=600, height=650)
+screen.bgcolor("black")
+screen.title("Snake Game")
+screen.listen()
+screen.tracer(0)
 
-snake_player = Snake([(0, 0), (-20, 0), (-40, 0)])
+scoreboard = Scoreboard()
+snake_player: Snake = Snake(STARTER_POSITIONS)
+food = Food(STARTER_POSITIONS)
 
-game_view = game.screen_setup(screen, "Snake Eater")
-food = game.spawn_food(snake_player.get_segment_positions())
+screen.onkey(snake_player.up, "w")
+screen.onkey(snake_player.down, "s")
+screen.onkey(snake_player.left, "a")
+screen.onkey(snake_player.right, "d")
 
-game_view.onkey(snake_player.up, "w")
-game_view.onkey(snake_player.down, "s")
-game_view.onkey(snake_player.left, "a")
-game_view.onkey(snake_player.right, "d")
 
+def game_over(screen: _Screen, snake_player: Snake) -> None:
+    snake_player.is_alive = False
+    for turtle in screen.turtles():
+        turtle.hideturtle()
+
+
+# Main game loop
 while snake_player.is_alive:
+    screen.update()
     # Exit loop if snake hits wall
-    if snake_player.head.xcor() in (-300, 300) or snake_player.head.ycor() in (-300, 300):
-        snake_player.is_alive = False
-        game.game_over(game_view)
+    if not (-290 < snake_player.head.xcor() < 290) or not (-305 < snake_player.head.ycor() < 265):
+        scoreboard.game_over()
+        game_over(screen, snake_player)
         break
     else:
         snake_player.move()
@@ -39,15 +56,16 @@ while snake_player.is_alive:
     # Exit loop if snake hits tail
     for segment in snake_player.get_segment_positions()[1:]:
         if snake_player.head.distance(segment) < 10:
-            snake_player.is_alive = False
-            game.game_over(game_view)
+            scoreboard.game_over()
+            game_over(screen, snake_player)
             break
     else:
         # Handle collision with food
-        if snake_player.head.distance(food) < 10:
-            game.remove_food(food)
+        if snake_player.head.distance(food) < 15:
+            food.refresh(snake_player.get_segment_positions())
             snake_player.add_segment()
-            game.update_score(game_view)
-            food = game.spawn_food(snake_player.get_segment_positions())
+            scoreboard.increase_score()
 
-game_view.exitonclick()
+    time.sleep(DELAY)
+
+screen.exitonclick()

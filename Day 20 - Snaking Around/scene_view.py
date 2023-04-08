@@ -1,60 +1,43 @@
-import random
-from turtle import Turtle, _Screen
+# from turtle import Screen, Turtle, _Screen
 
 
-class Scene:
-    def __init__(self):
-        self.score = 0
+# class Scene(_Screen):
+#     def __init__(self):
+#         super().__init__()
+#         self.score = 0
+#         self.delay = 0.1
+#         self.screen = Screen()
+#         self.screen_setup()
 
-    def screen_setup(self, screen, title):
-        """Set up the screen for the game."""
-        if isinstance(screen, _Screen):
-            screen.setup(width=600, height=600)
-            screen.bgcolor("black")
-            screen.title(title)
-            screen.listen()
-            new_screen = screen
-            return new_screen
+#     def screen_setup(self):
+#         self.screen.setup(width=600, height=600)
+#         self.screen.bgcolor("black")
+#         self.screen.title("Snake Game")
+#         self.screen.listen()
+#         self.screen.tracer(0)
 
-        else:
-            raise TypeError("screen must be a Screen object")
+#     # def move_food(self, food, snake_pos):
+#     #     while True:
+#     #         x = random.choice(range(-280, 280, 20))
+#     #         y = random.choice(range(-280, 280, 20))
+#     #         if (x, y) not in snake_pos:
+#     #             break
 
-    def spawn_food(self, snake_pos):
-        food = Turtle(shape="circle", visible=False)
-        food.speed("fastest")
-        food.color("red")
-        food.penup()
+#     #     food.goto(x, y)
 
-        while True:
-            x = random.choice(range(-280, 280, 20))
-            y = random.choice(range(-280, 280, 20))
-            if (x, y) not in snake_pos:
-                break
+#     def update_score(self):
+#         self.score += 1
+#         self.screen.title(f"Snake Eater - Score: {self.score}")
 
-        food.goto(x, y)
-        food.showturtle()
-        return food
-
-    def remove_food(self, food):
-        food.hideturtle()
-
-    def update_score(self, screen):
-        self.score += 1
-        screen.title(f"Snake Eater - Score: {self.score}")
-
-    def game_over(self, screen):
-        screen.resetscreen()
-        screen.title("Snake Eater - Game Over")
-        screen.bgcolor("black")
-        scoreboard = Turtle(visible=False)
-        scoreboard.speed("fastest")
-        scoreboard.color("white")
-        scoreboard.penup()
-        scoreboard.goto(0, 0)
-        scoreboard.write(
-            f"Game Over! Your score was {self.score}.",
-            align="center",
-            font=("Courier", 24, "normal"),
-        )
-
-        # screen.ontimer(screen.bye, 2000)
+#     def game_over(self):
+#         self.screen.resetscreen()
+#         self.screen.title("Snake Eater - Game Over")
+#         self.screen.bgcolor("black")
+#         scoreboard = Turtle(visible=False)
+#         scoreboard.color("white")
+#         scoreboard.penup()
+#         scoreboard.write(
+#             f"Game Over! Your score was {self.score}.",
+#             align="center",
+#             font=("Courier", 24, "normal"),
+#         )
