@@ -21,7 +21,7 @@ class Food(Turtle):
         """
         while True:
             random_x = random.randint(-280, 280)
-            random_y = random.randint(-280, 280)
+            random_y = random.randint(-295, 245)
             if (random_x, random_y) not in snake_pos:
                 break
 

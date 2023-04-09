@@ -36,15 +36,23 @@ class Snake:
         self.head.forward(20)
 
     def up(self):
+        if self.head.heading() == 270:
+            return
         self.head.setheading(90)
 
     def down(self):
+        if self.head.heading() == 90:
+            return
         self.head.setheading(270)
 
     def left(self):
+        if self.head.heading() == 0:
+            return
         self.head.setheading(180)
 
     def right(self):
+        if self.head.heading() == 180:
+            return
         self.head.setheading(0)
 
     def get_segment_positions(self):
