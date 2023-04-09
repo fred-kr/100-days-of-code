@@ -3,7 +3,7 @@ from turtle import Turtle
 
 
 class Food(Turtle):
-    def __init__(self, snake_pos: list) -> None:
+    def __init__(self, snake_pos: list[tuple[int, int]]) -> None:
         super().__init__()
         self.shape("circle")
         self.penup()
@@ -12,7 +12,7 @@ class Food(Turtle):
         self.speed("fastest")
         self.refresh(snake_pos)
 
-    def refresh(self, snake_pos: list) -> None:
+    def refresh(self, snake_pos: list[tuple[int, int]]) -> None:
         """
         Move food to a random location on the screen that is not occupied by the snake.
 

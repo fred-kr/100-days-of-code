@@ -1,14 +1,3 @@
-# Day 20
-# [x] 1. Create a snake body that is 3 squares long.
-# [x] 2. Move the snake.
-# [x] 3. Control the snake.
-
-# Day 21
-# [x] 4. Detect collision with food.
-# [ ] 5. Create a scoreboard.
-# [x] 6. Detect collision with wall.
-# [x] 7. Detect collision with tail.
-
 import time
 from turtle import Screen, _Screen
 
@@ -54,11 +43,13 @@ while snake_player.is_alive:
         snake_player.move()
 
     # Exit loop if snake hits tail
-    for segment in snake_player.get_segment_positions()[1:]:
-        if snake_player.head.distance(segment) < 10:
-            scoreboard.game_over()
-            game_over(screen, snake_player)
-            break
+    if any(
+        snake_player.head.distance(segment) < 10
+        for segment in snake_player.get_segment_positions()[1:]
+    ):
+        scoreboard.game_over()
+        game_over(screen, snake_player)
+        break
     else:
         # Handle collision with food
         if snake_player.head.distance(food) < 15:
