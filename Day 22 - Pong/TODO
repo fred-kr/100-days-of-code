@@ -1,0 +1,11 @@
+
+Pong Game:
+  ✔ Create a screen @started(23-04-12 22:28) @done(23-04-12 22:28) @lasted(48s)
+  ✔ Create and move a paddle @started(23-04-12 22:28) @done(23-04-12 22:39) @lasted(11m44s)
+  ✔ Create another paddle @started(23-04-12 22:40) @done(23-04-12 22:57) @lasted(17m53s)
+  ✔ Create the ball and make it move @started(23-04-12 22:58) @done(23-04-12 23:10) @lasted(12m40s)
+  ✔ Detect collision with wall and bounce @started(23-04-12 23:10) @done(23-04-12 23:27) @lasted(17m28s)
+  ✔ Detect collision with paddle @done(23-04-12 23:27)
+  ✔ Detect when paddle misses @done(23-04-12 23:43)
+  ✔ Keep score @done(23-04-12 23:43)
+
