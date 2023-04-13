@@ -21,6 +21,8 @@ class Ball(Turtle):
     def bounce_y(self):
         self.y_move *= -1
 
+    # * Since `move_speed` is the delay between game updates,
+    # * decreasing it makes the overall game faster
     def bounce_x(self):
         self.x_move *= -1
         self.move_speed *= 0.9
