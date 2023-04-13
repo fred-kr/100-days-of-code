@@ -1,8 +1,8 @@
 import time
-from turtle import Screen
+from turtle import Screen, Turtle
 
 from ball import Ball
-from paddle import Paddle
+from paddle import Computer, Paddle
 from scoreboard import Scoreboard
 
 screen = Screen()
@@ -10,16 +10,29 @@ screen.setup(width=1000, height=600)
 screen.bgcolor("black")
 screen.title("Pong")
 screen.tracer(0)
+screen.mode("logo")
+
+middle_line = Turtle()
+middle_line.hideturtle()
+middle_line.penup()
+middle_line.color("white")
+middle_line.goto(0, 300)
+middle_line.setheading(180)
+middle_line.pensize(3)
+for _ in range(30):
+    middle_line.pendown()
+    middle_line.forward(10)
+    middle_line.penup()
+    middle_line.forward(10)
+
 
 player = Paddle((-480, 0))
-computer = Paddle((480, 0))
+computer = Computer((480, 0))
 ball = Ball()
 scoreboard = Scoreboard()
 
-screen.onkey(player.move_up, "w")
-screen.onkey(player.move_down, "s")
-screen.onkey(computer.move_up, "Up")
-screen.onkey(computer.move_down, "Down")
+screen.onkeypress(player.move_up, "w")
+screen.onkeypress(player.move_down, "s")
 
 active = True
 
@@ -47,6 +60,7 @@ while active:
         active = False
         scoreboard.game_over()
 
+    computer.move()
     ball.move()
     ball.get_speed()
 
